@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/medias/css/Main.css" />
+	<script src="/medias/js/require.js" type="text/javascript"></script>
+	<script src="/medias/js/mainconfig.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript">
+		require(
+				[
+					'jquery',
+					'baseFormView',
+					'baseAttachmentView'
+				],function($){
+					require(['/medias/model/htba/htba.js']);
+				}
+		);
+	</script>
+	<style type="text/css">
+		html,
+		body {
+			height: 100%;
+			overflow: hidden ;
+		}
+		.test{
+			color:black;
+		}
+	</style>
+</head>
+<body>
+<div id="" class="Boxform" >
+    <div class="tcbox">
+	<div class="title">
+		<h1>合同备案基本信息:</h1>
+		<input type="button" class="test" id="test1" value="渲染甲方为输入"/>
+		<input type="button" class="test" id="test2" value="渲染甲方为选择"/>
+		<input type="button" class="test" id="test3" value="快速渲染状态"/>
+		<input type="button" class="test" id="test4" value="清除渲染事件"/>
+		<input type="button" class="test" id="test5" value="规则验证全部"/>
+		<input type="button" class="test" id="test6" value="规则验证局部"/>
+		<input type="button" class="test" id="test7" value="甲方改变验证"/>
+	</div>
+	<table class="form" border="0" cellspacing="0" cellpadding="0">
+		<col width="130px" />
+		<col />
+		<col width="130px" />
+		<col />
+		<col width="130px" />
+		<col />
+		<tr>
+			<th>合同类别</th>
+			<td colspan="2">
+				<input type="hidden" data-model="ModelHtba" data-property="id"/>
+				<input type="hidden" data-model="ModelHtba" data-property="sfyx_st"/>
+				<select name="" class="select" data-model="ModelHtba" data-property="htlb_no">
+					<option value=""></option>
+				</select>
+			</td>
+			<th>合同备案号</th>
+			<td  colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="htbah"/>
+			</td>
+		</tr>
+		<tr>
+			<th>项目名称</th>
+			<td colspan="5">
+				<input type="hidden" class="TextBox" value="" data-model="ModelHtba" data-property="xm_id"/>
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="xmmc"/>
+			</td>
+		</tr>
+		<tr>
+			<th>标段名称</th>
+			<td colspan="5">
+				<input type="hidden" class="TextBox" value="" data-model="ModelHtba" data-property="bd_id"/>
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="bdmc"/>
+			</td>
+		</tr>
+		<tr>
+			<th><b>*</b>合同名称</th>
+			<td colspan="5">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="htmc"/>
+			</td>
+		</tr>
+		<tr>
+			<th>建筑面积（M<sup>2</sup>）</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="jsgm"/>
+			</td>
+			<th>地址</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="xmdz"/>
+			</td>
+		</tr>
+		<tr>
+			<th>施工总承包单位资质</th>
+			<td colspan="5">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="sgzcbdwzz"/>
+			</td>
+		</tr>
+		<tr>
+			<th>监理单位</th>
+			<td colspan="5">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="jldw"/>
+			</td>
+		</tr>
+		<tr>
+			<th>甲方名称(建设单位)</th>
+			<td colspan="2">
+				<input type="hidden" class="TextBox" value="" data-model="ModelHtba" data-property="jfdw_id"/>
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="jfdwmc"/>
+			</td>
+			<th>项目负责人</th>
+			<td colspan="2">
+				<input type="hidden" value="" data-model="ModelHtba" data-property="xmfzr_id"/>
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="xmfzrxm"/>
+			</td>
+		</tr>
+		<tr>
+			<th><b>*</b>甲方合同签订人</th>
+			<td colspan="2">
+				<input type="text" class="TextBoxchoose" value="" data-model="ModelHtba" data-property="jfhtqdr"/>
+			</td>
+			<th><b>*</b>甲方签订时间</th>
+			<td colspan="2">
+				<input type="text" class="Textdate" value="" data-model="ModelHtba" data-property="jfqdsj"/>
+			</td>
+		</tr>
+		<tr>
+			<th>乙方名称</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="yfdw_id"/>
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="yfdwmc"/>
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="yffbdw_id"/>
+				<select name="" class="select" data-model="ModelHtba" data-property="yffbdwmc">
+					<option value=""></option>
+				</select>
+			</td>
+			<th>项目经理</th>
+			<td colspan="2">
+				<input type="hidden" value="" data-model="ModelHtba" data-property="xmjl_id"/>
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="xmjlxm"/>
+				<input type="text" class="TextBoxchoose" value="" data-model="ModelHtba" data-property="cbdwFzr"/>
+			</td>
+		</tr>
+		<tr>
+			<th><b>*</b>乙方合同签订人</th>
+			<td colspan="2">
+				<input type="text" class="TextBoxchoose" value="" data-model="ModelHtba" data-property="yfhtqdrmc"/>
+			</td>
+			<th><b>*</b>乙方签订时间</th>
+			<td colspan="2">
+				<input type="text" class="Textdate" value="" data-model="ModelHtba" data-property="yfqdsj"/>
+			</td>
+		</tr>
+		<tr>
+			<th><b>*</b>劳务分包内容</th>
+			<td colspan="5">
+				<div style="width:100%"  data-model="ModelHtba" data-property="lwfbnrnos"></div>
+			</td>
+		</tr>
+		<tr>
+			<th>工程造价(万元)</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="gczj" />
+			</td>
+			<th><b>*</b>合同金额(万元)</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="htje" maxlength="16"/>
+			</td>
+		</tr>
+		<tr>
+			<th><b>*</b>合同开工日期</th>
+			<td colspan="2">
+				<input type="text" class="Textdate" value="" data-model="ModelHtba" data-property="htkgrq"/>
+			</td>
+			<th><b>*</b>合同竣工日期</th>
+			<td colspan="2">
+				<input type="text" class="Textdate" value="" data-model="ModelHtba" data-property="htjgrq"/>
+			</td>
+		</tr>
+		<tr>
+			<th><b>*</b>安全措施费(万元)</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="aqcsf"  maxlength="16"/>
+			</td>
+			<th><b>*</b>安全文明施工费支付方式</th>
+			<td colspan="2">
+				<select name="" class="selectT" data-model="ModelHtba" data-property="acfzffs">
+					<option value=""></option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th><b>*</b>安全文明措施费用专户银行</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="acfyh"  maxlength="50"/>
+			</td>
+			<th><b>*</b>专户账号</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="acfzh"  maxlength="40"/>
+			</td>
+		</tr>
+		<tr>
+			<th><b>*</b>农民工工资专户银行</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="nmgyh"  maxlength="50"/>
+			</td>
+			<th><b>*</b>专户账号</th>
+			<td colspan="2">
+				<input type="text" class="TextBox" value="" data-model="ModelHtba" data-property="nmgzh"  maxlength="40"/>
+			</td>
+		</tr>
+	</table>
+	<table class="form" id="tableview"></table>
+	<input type="hidden" data-model="ModelHtba" data-property="fj_id"/>
+	<table class="form"></table>
+    </div>
+</div>
+</body>
+</html>
